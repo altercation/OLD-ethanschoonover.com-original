@@ -1,0 +1,20 @@
+Active Subtrees
+===============
+
+Subtree                         Remote
+------------------------------- --------------------------------------
+projects/solarized              remote-solarized
+
+
+Add remotes
+============
+git remote add remote-solarized git@github.com:altercation/solarized.git
+
+Add subtrees
+============
+git subtree add --prefix=projects/solarized remote-solarized master 
+
+Commands - Solarized
+====================
+git subtree pull --prefix=pages/solarized remote-solarized master
+git subtree push --prefix=pages/solarized remote-solarized master
