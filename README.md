@@ -117,7 +117,8 @@ Deployment Server
 
 * Post-receive Hook
 
-    ethanschoonover.com/.git/hooks/post-receive file:
+    ethanschoonover.com/.git/hooks/post-receive file (ensure this is set to 
+    executable):
 
         #!/bin/bash
 
@@ -150,6 +151,10 @@ Deployment Server
         if [ ! -h _live ]; then
                 ln -s _site _live;
         fi
+
+* Commit to server
+
+        $ git push aithops
 
 Notes
 -----
