@@ -115,6 +115,9 @@ Deployment Server
     www@aithops$ cd ..
     www@aithops$ chmod -R g+w ethanschoonover.com
 
+    (last command only required as I'll be commiting as a different user that
+    is also a member of the www group)
+
 * Post-receive Hook
 
     ethanschoonover.com/.git/hooks/post-receive file (ensure this is set to 
