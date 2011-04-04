@@ -1,0 +1,586 @@
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles. {{{
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+
+//body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+body { font:16px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/**
+ * Minimal base styles.
+ */
+
+/* Always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+// }}}
+
+/**
+ * Primary styles
+ *
+ * Author: Ethan Schoonover
+ */
+
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+$fontstack: "ff-din-web-pro-1","ff-din-web-pro-2",sans-serif;
+$hmargin:   70px;
+$vmargin:   20px;
+
+/*
+Font Sizing Hack via
+http://html5boilerblate.com and
+http://developer.yahoo.com/yui/fonts/
+=====================================
+target size     Declare this
+in pixels (px)  percent (%)
+10              77
+11              85
+12              93 (was 93)
+13              100
+14              108 (was 107)
+15              116 (was 114)
+16              123.1 (was 122)
+17              131 (was 129)
+18              138.5 (was 136)
+19              146.5 (was 144)
+20              153.9 (was 152)
+21              161.6 (was 159)
+22              167
+23              174
+24              182
+25              189
+26              197
+*/
+html * {
+    font-family: $fontstack;
+}
+html > * {
+    //font-size: 123.1%;
+}
+p,dt,li {
+    //font-size: 146.5%;
+    //font-size: 153.9%;
+}
+p {
+    font-family: $fontstack;
+    font-weight: lighter;
+    margin: 0 0 $vmargin 0;
+}
+strong { font-weight: bold; }
+em { }
+ol,ul {
+    margin-bottom: $vmargin;
+}
+li {
+    margin-bottom: $vmargin/2;
+}
+li p {
+   //margin-bottom: $vmargin/5;
+}
+li > p:first-of-type {
+    //margin-bottom: $vmargin/2;
+}
+li > p:last-of-type {
+    //margin-bottom: $vmargin;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-left: $hmargin/2;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $fontstack;
+    font-weight: lighter;
+    text-transform: capitalize;
+    margin-top:$vmargin*2;
+    margin-bottom:$vmargin;
+}
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom:1px solid;
+}
+h2 {
+    border-bottom:1px solid;
+}
+h3,h4,h5,h6 {
+    border-bottom:none;
+}
+h1#pagetitle, h1:first-of-type {
+    font-size: 700%;
+    //font-size: 600%;
+    margin-top:0;
+    margin-bottom:$vmargin;
+    line-height: 100%;
+    border: none;
+    text-decoration: none;
+}
+h1#pagetitle a, h1:first-of-type a,
+h2#pagesubtitle a, h2:first-of-type a {
+    text-decoration: none;
+}
+h2#pagesubtitle, h2:first-of-type {
+    font-weight: lighter;
+    font-size: 200%;
+    text-transform: none;
+    color: $base01;
+    margin-top:$vmargin;
+    margin-bottom:$vmargin*2;
+    line-height: 100%;
+    border: none;
+}
+/*
+h1 { font-size: 153.9% }      //26px
+h2 { font-size: 153.9% }      //23px
+h3 { font-size: 146.5% }    //20px
+h4 { font-size: 138.5% }      //18px
+h5 { font-size: 138.5% }      //18px
+h6 { font-size: 138.5% }      //18px
+*/
+h1 { font-size: 153.9% }      //26px
+h2 { font-size: 153.9% }      //23px
+h3 { font-size: 146.5% }    //20px
+h4 { font-size: 138.5% }      //18px
+h5 { font-size: 138.5% }      //18px
+h6 { font-size: 138.5% }      //18px
+img { margin: 0 0 $vmargin 0; }
+header {
+    //font-size: 123.1% ;
+    line-height: 190%;
+    a {
+        text-decoration:none;
+        margin-right: 10px;
+    }
+}
+footer {
+    padding-left:$hmargin;
+    //background-color:$base02;
+    line-height:200%;
+    //position:absolute;
+    //bottom:0;
+    padding-right:1em;
+}
+#main {
+    margin-left:$hmargin;
+    margin-right:$hmargin;
+    margin-top:$vmargin*2;
+    margin-bottom:$vmargin*2;
+    //min-width: 52em; // sufficient for 80 char pre blocks
+    min-width: 32em; // sufficient for 72 char pre blocks
+    max-width: 52em;
+}
+#sitelink{
+    display:block;
+    float:left;
+    width: $hmargin - 10px;
+    padding-left: 10px;
+}
+pre {
+    margin-bottom:$vmargin;
+}
+pre, code {
+    font-family: monospace;
+}
+pre {
+}
+/*code {
+    font-size: 75%;
+}*/
+table {
+    font-size: 75%;
+}
+th {
+    padding-bottom: .7em;
+    padding-right: 1.8em;
+}
+td {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: .2em;
+    padding-right: 1.8em;
+}
+td.nums {
+}
+#click-here-to-download-latest-version a {
+    font-weight:bold;
+    text-decoration:none;
+    padding-left:70px;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 60px;
+    display:block;
+    line-height: 60px;
+    background-image: url("/img/download-base00.png");
+    color:red;
+}
+
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) 
+{
+    background-color:$rebase03;
+    color:$rebase0;
+    font-family: $fontstack;
+    * { color:$rebase0; }
+    h1,h2,h3,h4,h5,h6 { color:$rebase1; border-color: $rebase0; }
+    h1#pagetitle, h1:first-of-type { color: $rebase1; }
+    h2#pagesubtitle, h2:first-of-type { color: $rebase01; }
+    a, a:active, a:visited { color: $rebase1; }
+    a:hover { background-color: $rebase02 }
+    header {
+        background-color: $rebase01;
+        color: $rebase1;
+        a.navlink, a:active.navlink, a:visited.navlink { color: $rebase1; }
+        a:hover.navlink { background: transparent; color: $rebase02; }
+        #sitelink { color: $rebase02; background-color: $rebase1 }
+        a:hover#sitelink { font-weight: bold; }
+    }
+    footer {
+        background-color: $rebase02;
+        color: $rebase01;
+    }
+    pre {
+        color: $rebase1;
+        background-color: $rebase02;
+    }
+    tr:nth-child(odd) { background-color:$rebase02 }
+    th { color:$rebase1; background-color:$rebase03; }
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-base00.png");
+        color:$rebase0;
+    }
+}
+
+@mixin accentize($accent) {
+    a#sitelink{ background-color:$accent; }
+    a, a:active, a:visited, code.url { color: $accent; }
+    h1 {color:$accent}
+    h2,h3,h4,h5,h6 {color:$accent}
+    h1#pagetitle, h1:first-of-type { color: $accent; }
+}
+
+html, .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
+.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
+
+html * {
+    color-profile: sRGB;
+    rendering-intent: auto;
+}
+
+//TODO> put tone accents in rebase .base03{ @include accentize($base03) }
+.yellow{
+    @include accentize($yellow);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-yellow.png");
+        color:$yellow;
+    }
+}
+.orange{
+    @include accentize($orange);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-orange.png");
+        color:$orange;
+    }
+}
+.red{
+    @include accentize($red);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-red.png");
+        color:$red;
+    }
+}
+.magenta{
+    @include accentize($magenta);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-magenta.png");
+        color:$magenta;
+    }
+}
+.violet{
+    @include accentize($violet);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-violet.png");
+        color:$violet;
+    }
+}
+.blue{
+    @include accentize($blue);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-blue.png");
+        color:$blue;
+    }
+}
+.cyan{
+    @include accentize($cyan);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-cyan.png");
+        color:$cyan;
+    }
+}
+.green{
+    @include accentize($green);
+    #click-here-to-download-latest-version a {
+        background-image: url("/img/download-green.png");
+        color:$green;
+    }
+}
+
+/* highlighting-kate */
+
+/* Based on kate's own default colors for Haskell */
+pre.sourceCode, table.sourceCode, table.sourceCode * { font-family: monospace; }
+code.sourceCode span.kw { color: $yellow; font-weight: bold; }
+code.sourceCode span.dt { color: $cyan; }
+code.sourceCode span.dv { color: $base01; }
+code.sourceCode span.bn { color: $orange; }
+code.sourceCode span.fl { color: $cyan; }
+code.sourceCode span.ch { color: $red; }
+code.sourceCode span.st { color: $magenta; }
+code.sourceCode span.co { color: $base01; font-style: italic; }
+code.sourceCode span.ot { }
+code.sourceCode span.al { color: $green; font-weight: bold; }
+code.sourceCode span.fu { color: $blue; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: $red; font-weight: bold; }
+
+
+/**
+ * Non-semantic helper classes: please define your styles before this {{{
+ */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+
+@media all and (orientation:portrait) {
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
+// }}}
