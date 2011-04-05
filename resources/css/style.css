@@ -1,8 +1,10 @@
 /**
- * HTML5 ✰ Boilerplate
+ * ethanschoonover.com master css file
+ * fold in vim to view only the non html5boilerplate components
  *
  * style.css contains a reset, font normalization and some base styles. {{{
  *
+ * See html5boilerplate.com for the base css file
  * Credit is left where credit is due.
  * Much inspiration was taken from these projects:
  * - yui.yahooapis.com/2.8.1/build/base/base.css
@@ -165,8 +167,7 @@ a:hover { color: #036; }
 // }}}
 
 /**
- * Primary styles
- *
+ * Primary styles (custom section, non htmlboilerplate)
  * Author: Ethan Schoonover
  */
 
@@ -366,7 +367,8 @@ td {
 }
 td.nums {
 }
-#click-here-to-download-latest-version a {
+
+h2#download + h3 {
     font-weight:bold;
     text-decoration:none;
     padding-left:70px;
@@ -408,7 +410,7 @@ td.nums {
     }
     tr:nth-child(odd) { background-color:$rebase02 }
     th { color:$rebase1; background-color:$rebase03; }
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-base00.png");
         color:$rebase0;
     }
@@ -433,56 +435,56 @@ html * {
 //TODO> put tone accents in rebase .base03{ @include accentize($base03) }
 .yellow{
     @include accentize($yellow);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-yellow.png");
         color:$yellow;
     }
 }
 .orange{
     @include accentize($orange);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-orange.png");
         color:$orange;
     }
 }
 .red{
     @include accentize($red);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-red.png");
         color:$red;
     }
 }
 .magenta{
     @include accentize($magenta);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-magenta.png");
         color:$magenta;
     }
 }
 .violet{
     @include accentize($violet);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-violet.png");
         color:$violet;
     }
 }
 .blue{
     @include accentize($blue);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-blue.png");
         color:$blue;
     }
 }
 .cyan{
     @include accentize($cyan);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-cyan.png");
         color:$cyan;
     }
 }
 .green{
     @include accentize($green);
-    #click-here-to-download-latest-version a {
+    h2#download + h3 {
         background-image: url("/img/download-green.png");
         color:$green;
     }
