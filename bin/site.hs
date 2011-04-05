@@ -84,7 +84,7 @@ main = hakyll $ do
 -----------------------------------------------------------------------
     route  "atom.xml" idRoute
     create "atom.xml" $
-        requireAll_ "posts/***.md" >>> renderAtom feedConfiguration
+        requireAll_ "projects/*/*.md" >>> renderAtom feedConfiguration
 
 -----------------------------------------------------------------------
 -- custom compilers
