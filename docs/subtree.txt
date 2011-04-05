@@ -16,5 +16,5 @@ git subtree add --prefix=projects/solarized remote-solarized master
 
 Commands - Solarized
 ====================
-git subtree pull --prefix=pages/solarized remote-solarized master
-git subtree push --prefix=pages/solarized remote-solarized master
+git subtree pull --prefix=projects/solarized remote-solarized master
+git subtree push --prefix=projects/solarized remote-solarized master
