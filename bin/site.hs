@@ -28,7 +28,7 @@ main = hakyll $ do
     compile resource      $ copyFileCompiler
 
 -----------------------------------------------------------------------
--- compile templates and pages
+-- compile templates
 -----------------------------------------------------------------------
 
     compile "templates/*" templateCompiler
@@ -62,21 +62,21 @@ main = hakyll $ do
     create "index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Ethan Schoonover")
         >>> requireAllA "posts/***.md" (id *** arr newest10 >>> postList)
-        >>> requireAllA "projects/***.md" projectList
+        >>> requireAllA "projects/*/*.md" projectList
         >>> applyTemplateCompiler "templates/home.html"
         >>> applyTemplateCompiler "templates/default.html"
 
     route  "posts/index.html" $ idRoute
     create "posts/index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Posts - Ethan Schoonover")
-        >>> requireAllA "posts/***.md" postList
+        >>> requireAllA "posts/*/*.md" postList
         >>> applyTemplateCompiler "templates/posts.html"
         >>> applyTemplateCompiler "templates/default.html"
 
     route  "projects/index.html" $ idRoute
     create "projects/index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Projects - Ethan Schoonover")
-        >>> requireAllA "projects/***.md" projectList
+        >>> requireAllA "projects/*/*.md" projectList
         >>> applyTemplateCompiler "templates/projects.html"
         >>> applyTemplateCompiler "templates/default.html"
 
