@@ -69,7 +69,7 @@ main = hakyll $ do
     route  "posts/index.html" $ idRoute
     create "posts/index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Posts - Ethan Schoonover")
-        >>> requireAllA "posts/*/*.md" postList
+        >>> requireAllA "posts/***.md" postList
         >>> applyTemplateCompiler "templates/posts.html"
         >>> applyTemplateCompiler "templates/default.html"
 
@@ -79,6 +79,12 @@ main = hakyll $ do
         >>> requireAllA "projects/*/*.md" projectList
         >>> applyTemplateCompiler "templates/projects.html"
         >>> applyTemplateCompiler "templates/default.html"
+
+-- render rss feed
+-----------------------------------------------------------------------
+    route  "atom.xml" idRoute
+    create "atom.xml" $
+        requireAll_ "posts/***.md" >>> renderAtom feedConfiguration
 
 -----------------------------------------------------------------------
 -- custom compilers
@@ -129,7 +135,7 @@ toIndex = customRoute fileToIndex
 fileToIndex :: Identifier -> FilePath
 fileToIndex = (flip combine) "index.html" . dropFileName . toFilePath
 
--- misc utils
+-- misc functions
 -----------------------------------------------------------------------
 newest10 :: [Page a] -> [Page a]
 newest10 = take 10 . reverse . sortByBaseName
@@ -153,3 +159,14 @@ buildList field template = setFieldA field $
         >>> require template (\p t -> map (applyTemplate t) p)
         >>> arr mconcat
         >>> arr pageBody
+
+-- misc functions
+-----------------------------------------------------------------------
+feedConfiguration :: FeedConfiguration
+feedConfiguration =  FeedConfiguration
+    { feedTitle       = "EthanSchoonover.com"
+    , feedDescription = "Projects & Posts from Ethan Schoonover"
+    , feedAuthorName  = "Ethan Schoonover"
+    , feedRoot        = "http://ethanschoonover.com"
+    }
+
