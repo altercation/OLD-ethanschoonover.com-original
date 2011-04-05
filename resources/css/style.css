@@ -281,10 +281,6 @@ h1#pagetitle, h1:first-of-type {
     border: none;
     text-decoration: none;
 }
-h1#pagetitle a, h1:first-of-type a,
-h2#pagesubtitle a, h2:first-of-type a {
-    text-decoration: none;
-}
 h2#pagesubtitle, h2:first-of-type {
     font-weight: lighter;
     font-size: 200%;
@@ -383,10 +379,8 @@ h2#download + h3 {
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) 
 {
-    background-color:$rebase03;
-    color:$rebase0;
-    font-family: $fontstack;
     * { color:$rebase0; }
+    body { background-color:$rebase03; }
     h1,h2,h3,h4,h5,h6 { color:$rebase1; border-color: $rebase0; }
     h1#pagetitle, h1:first-of-type { color: $rebase1; }
     h2#pagesubtitle, h2:first-of-type { color: $rebase01; }
@@ -410,6 +404,9 @@ h2#download + h3 {
     }
     tr:nth-child(odd) { background-color:$rebase02 }
     th { color:$rebase1; background-color:$rebase03; }
+    h1 a:hover {
+        -webkit-text-stroke: 3px $rebase02;
+    }
     h2#download + h3 {
         background-image: url("/img/download-base00.png");
         color:$rebase0;
@@ -424,8 +421,8 @@ h2#download + h3 {
     h1#pagetitle, h1:first-of-type { color: $accent; }
 }
 
-html, .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
-.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
+html, html.light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
+html.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
 
 html * {
     color-profile: sRGB;
@@ -433,61 +430,69 @@ html * {
 }
 
 //TODO> put tone accents in rebase .base03{ @include accentize($base03) }
-.yellow{
+html.yellow, .yellow{
     @include accentize($yellow);
     h2#download + h3 {
         background-image: url("/img/download-yellow.png");
         color:$yellow;
     }
 }
-.orange{
+html.orange, .orange{
     @include accentize($orange);
     h2#download + h3 {
         background-image: url("/img/download-orange.png");
         color:$orange;
     }
 }
-.red{
+html.red, .red{
     @include accentize($red);
     h2#download + h3 {
         background-image: url("/img/download-red.png");
         color:$red;
     }
 }
-.magenta{
+html.magenta, .magenta{
     @include accentize($magenta);
     h2#download + h3 {
         background-image: url("/img/download-magenta.png");
         color:$magenta;
     }
 }
-.violet{
+html.violet, .violet{
     @include accentize($violet);
     h2#download + h3 {
         background-image: url("/img/download-violet.png");
         color:$violet;
     }
 }
-.blue{
+html.blue, .blue{
     @include accentize($blue);
     h2#download + h3 {
         background-image: url("/img/download-blue.png");
         color:$blue;
     }
 }
-.cyan{
+html.cyan, .cyan{
     @include accentize($cyan);
     h2#download + h3 {
         background-image: url("/img/download-cyan.png");
         color:$cyan;
     }
 }
-.green{
+html.green, .green{
     @include accentize($green);
     h2#download + h3 {
         background-image: url("/img/download-green.png");
         color:$green;
     }
+}
+
+// h1#pagetitle a, h1:first-of-type a,
+// h2#pagesubtitle a, h2:first-of-type a,
+h1 a, h2 a,
+h1 a:hover, h2 a:hover {
+    text-decoration: none;
+    background: none;
 }
 
 /* highlighting-kate */
