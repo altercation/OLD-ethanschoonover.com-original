@@ -1,6 +1,6 @@
 ---
 title: Colophon
-subtitle: About Ethan Schoonover and the tools used to build this site
+description: About Ethan Schoonover and the tools used to build this site
 author: Ethan Schoonover
 tags:
 colors: light orange
