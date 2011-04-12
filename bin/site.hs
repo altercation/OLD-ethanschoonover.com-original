@@ -49,6 +49,7 @@ main = hakyll $ do
     route   page $ ifMatch "**index.*" setRoot `composeRoutes` toIndex
     route   page $ setRoot `composeRoutes` cleanURL
     compile page $ unGitHubCompiler
+        >>> applyTemplateCompiler "templates/page.html"
         >>> applyTemplateCompiler "templates/default.html"
 
     -- TODO: this currently overwrites markdown files in subdirectories
