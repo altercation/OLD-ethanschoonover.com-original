@@ -25,4 +25,6 @@ Typeface: DIN Pro
 
 Colorscheme: Solarized
 
-Built with [Hakyll](http://jaspervdj.be/hakyll)
+Built with [Hakyll](http://jaspervdj.be/hakyll).
+View the hakyll source code [locally](/source/bin/site.hs)
+or on [github](https://github.com/altercation/ethanschoonover.com/blob/master/bin/site.hs).
