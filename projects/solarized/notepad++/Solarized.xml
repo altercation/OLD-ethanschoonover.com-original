@@ -301,9 +301,9 @@ Credits:
             <WordsStyle name="PSEUDOCLASS" styleID="3" fgColor="B58900" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
             <WordsStyle name="UNKNOWN_PSEUDOCLASS" styleID="4" fgColor="DC322F" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
             <WordsStyle name="OPERATOR" styleID="5" fgColor="B58900" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
-            <WordsStyle name="IDENTIFIER" styleID="6" fgColor="D33683" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" keywordClass="instre1" />
+            <WordsStyle name="IDENTIFIER" styleID="6" fgColor="268BD2" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" keywordClass="instre1" />
             <WordsStyle name="UNKNOWN_IDENTIFIER" styleID="7" fgColor="DF6AA5" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
-            <WordsStyle name="VALUE" styleID="8" fgColor="D33683" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
+            <WordsStyle name="VALUE" styleID="8" fgColor="93A1A1" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
             <WordsStyle name="COMMENT" styleID="9" fgColor="586E75" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
             <WordsStyle name="ID" styleID="10" fgColor="B58900" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
             <WordsStyle name="IMPORTANT" styleID="11" fgColor="B58900" bgColor="2A211C" fontName="" fontStyle="0" fontSize="10" />
