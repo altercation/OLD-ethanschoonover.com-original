@@ -16,7 +16,29 @@ Colophon
 Ethan Schoonover
 ----------------
 
+I currently live in:
+
+* ~~\ Wisconsin\ ~~
+* ~~\ New Mexico\ ~~
+* ~~\ Oregon\ ~~
+* ~~\ Thailand\ ~~
+* ~~\ Hong Kong\ ~~
+* **Seattle, Washington**
+
+Things I have done:
+
+* Worked in a juvenile psychiatric treatment center
+* Earned money as a stage magician
+* Taught web development at university
+* Lived abroad as an expat for 12 years
+* Worked on a farm
+* Run online advertising in a global agency
+* Run a successful photo studio
+* Prototyped and launched a successful task management application
+* Started a family with an amazing woman
+
 [Mail me here](/mail)
+
 
 This Site
 ---------
