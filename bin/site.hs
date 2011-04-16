@@ -41,7 +41,6 @@ main = hakyll $ do
             >>> applyTemplateCompiler "templates/page.html"
             >>> applyTemplateCompiler "templates/default.html"
 
---  match (predicate (\i -> matches "p*/***.m*d" i && not (matches "README.*" i) && not (matches "index.*" i))) $ do
     forM_ markdownPages $ \p -> match p $ do
         route   $ setRoot `composeRoutes` cleanURL
         compile $ unGitHubCompiler
