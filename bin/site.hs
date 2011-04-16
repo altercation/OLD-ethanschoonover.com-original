@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, Arrows #-}
 module Main where
 
 import Prelude hiding (id)
@@ -13,53 +13,57 @@ main :: IO ()
 main = hakyll $ do
 
 -----------------------------------------------------------------------
--- copy resources files & process css as necessary
------------------------------------------------------------------------
-
-    route   "resources/css/**"   $ setRoot `composeRoutes` setExtension "css"
-    compile "resources/css/**"   $ byExtension (error "not a valid css file")
-            [ (".css",  sass)
-            , (".scss", sass) ]
-
-    forM_   [ "resources/*"
-            , "resources/js/**"
-            , "resources/img/**"] $ \resource -> do
-    route   resource      $ setRoot
-    compile resource      $ copyFileCompiler
-
------------------------------------------------------------------------
 -- compile templates
 -----------------------------------------------------------------------
 
-    compile "templates/*" templateCompiler
+    match "templates/*" $ compile templateCompiler
+
+-----------------------------------------------------------------------
+-- copy resources files & process css as necessary
+-----------------------------------------------------------------------
+    match   "resources/css/**" $ do
+        route   $ setRoot `composeRoutes` setExtension "css"
+        compile sass
+    --  compile $ byExtension (error "not a valid css file")
+    --          [ (".css",  sass)
+    --          , (".scss", sass) ]
+
+    match (predicate (\i -> matches "resources/**" i && not (matches "resources/css/**" i))) $ do
+        route   setRoot
+        compile copyFileCompiler
 
 -- create site pages
 -----------------------------------------------------------------------
 
-    forM_   [ "p*/***.md"
-            , "p*/***.mkd"
-            , "p*/***.mkdn"
-            , "p*/***.mdown"
-            , "p*/***.markdown"
-            , "p*/***.pandoc"
-            , "p*/***.pdc"
-            , "p*/***.lhs"
-            ] $ \page -> do
-    route   page $ ifMatch "**README.*" setRoot `composeRoutes` toIndex
-    route   page $ ifMatch "**index.*" setRoot `composeRoutes` toIndex
-    route   page $ setRoot `composeRoutes` cleanURL
-    compile page $ unGitHubCompiler
-        >>> applyTemplateCompiler "templates/page.html"
-        >>> applyTemplateCompiler "templates/default.html"
+    forM_ indexPages $ \p -> match p $ do
+        route   $ setRoot `composeRoutes` toIndex
+        compile $ unGitHubCompiler
+            >>> applyTemplateCompiler "templates/page.html"
+            >>> applyTemplateCompiler "templates/default.html"
 
-    -- TODO: this currently overwrites markdown files in subdirectories
-    forM_ ["p*/*/*/**"] $ \file -> do
-    route   file $ setRoot `composeRoutes` idRoute
-    compile file $ copyFileCompiler
+--  match (predicate (\i -> matches "p*/***.m*d" i && not (matches "README.*" i) && not (matches "index.*" i))) $ do
+    forM_ markdownPages $ \p -> match p $ do
+        route   $ setRoot `composeRoutes` cleanURL
+        compile $ unGitHubCompiler
+            >>> applyTemplateCompiler "templates/page.html"
+            >>> applyTemplateCompiler "templates/default.html"
+
+    match "p*/**/index.html" $ do
+        route   setRoot
+        compile defaultCompiler
+
+    match "p*/***.html" $ do
+        route   $ setRoot `composeRoutes` cleanURL
+        compile defaultCompiler
+
+    match (predicate (\i -> matches "p*/**" i && not (matches "*.m*d" i))) $ do
+        route   $ setRoot `composeRoutes` idRoute
+        compile copyFileCompiler
 
 -- special root pages
 -----------------------------------------------------------------------
-    route  "index.html" $ idRoute
+
+    match  "index.html" $ route idRoute
     create "index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Ethan Schoonover")
         >>> requireAllA "posts/***.md" (id *** arr newest10 >>> postList)
@@ -67,15 +71,15 @@ main = hakyll $ do
         >>> applyTemplateCompiler "templates/home.html"
         >>> applyTemplateCompiler "templates/default.html"
 
-    route  "posts/index.html" $ idRoute
-    create "posts/index.html" $ constA mempty
+    match  "./posts/index.html" $ route idRoute
+    create "./posts/index.html"  $ constA mempty
         >>> arr (setField "pagetitle" "Posts - Ethan Schoonover")
         >>> requireAllA "posts/***.md" postList
         >>> applyTemplateCompiler "templates/posts.html"
         >>> applyTemplateCompiler "templates/default.html"
 
-    route  "projects/index.html" $ idRoute
-    create "projects/index.html" $ constA mempty
+    match  "./projects/index.html" $ route idRoute
+    create "./projects/index.html" $ constA mempty
         >>> arr (setField "pagetitle" "Projects - Ethan Schoonover")
         >>> requireAllA "projects/*/*.md" projectList
         >>> applyTemplateCompiler "templates/projects.html"
@@ -83,10 +87,21 @@ main = hakyll $ do
 
 -- render rss feed
 -----------------------------------------------------------------------
-    route  "atom.xml" idRoute
+    match  "atom.xml" $ route  idRoute
     create "atom.xml" $
         requireAll_ "projects/*/*.md" >>> renderAtom feedConfiguration
 
+  where
+    indexPages =    [ "p*/**README.*"
+                    , "p*/**index.*" ]
+    markdownPages = [ "p*/***.md"
+                    , "p*/***.mkd"
+                    , "p*/***.mkdn"
+                    , "p*/***.mdown"
+                    , "p*/***.markdown"
+                    , "p*/***.pandoc"
+                    , "p*/***.pdc"
+                    , "p*/***.lhs" ]
 -----------------------------------------------------------------------
 -- custom compilers
 -----------------------------------------------------------------------
