@@ -80,6 +80,9 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 
 *   **Mutt** e-mail client also by [me] (*just* the Mutt colorscheme is
     [available here][Mutt Repository])
+*   **KDE** desktop environment courtesy of [Gokdeniz Karadag](https://github.com/hayalci)
+    and [Pete Higgins](https://github.com/phiggins) in a
+    [standalone repository][KDE Repository]
 
 ### Palettes
 
@@ -406,6 +409,7 @@ background.
 [Visual Studio Repository]: https://github.com/leddt/visualstudio-colors-solarized
 [Xcode 3]: https://github.com/shayne/solarized/tree/master/apple-xcode3-solarized
 [Xcode 4]: https://github.com/brianmichel/solarized/tree/master/apple-xcode4-solarized
+[KDE Repository] https://github.com/hayalci/kde-colors-solarized
 [me]: http://ethanschoonover.com/colophon
 [changelog]: http://ethanschoonover.com/solarized/CHANGELOG
 [Vim README]: http://ethanschoonover.com/solarized/vim-colors-solarized
