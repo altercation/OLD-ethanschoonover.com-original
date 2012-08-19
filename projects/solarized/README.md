@@ -64,6 +64,8 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 *   **Visual Studio** courtesy of [David Thibault](http://www.leddt.com) 
     ([@leddt](http://twitter.com/leddt))
     in the main repo and in a [standalone repository][Visual Studio Repository]
+*   **Ace Editor** courtesy of [Ajax.org](https://github.com/ajaxorg/ace) 
+    in the main repo and in the [Cloud9 IDE][Cloud9 IDE]
 
 *   **Xcode** work in progress ports are available for [Xcode 3] and [Xcode 4] 
     and will be pulled into the main Solarized project soon.
@@ -404,6 +406,7 @@ background.
 [TextMate Repository]: https://github.com/deplorableword/textmate-solarized
 [TextWrangler-BBEdit Repository]: https://github.com/rcarmo/textwrangler-bbedit-solarized
 [Visual Studio Repository]: https://github.com/leddt/visualstudio-colors-solarized
+[Cloud9 IDE]: https://www.c9.io
 [Xcode 3]: https://github.com/shayne/solarized/tree/master/apple-xcode3-solarized
 [Xcode 4]: https://github.com/brianmichel/solarized/tree/master/apple-xcode4-solarized
 [me]: http://ethanschoonover.com/colophon
