@@ -19,7 +19,7 @@ included in the main project repository, please consider the following
 guidelines:
 
 1. No hue or color changes. Please keep the same hex/rgb/L*a*b values. If you 
-   want to change them, that's fine, but I'd recommend setting it up as a 
+   want to change them, that's fine, but I'd recommend setting it up as a ((??? what goes here?))
 
 2. If you are making a new port, consider creating a repository with just the 
    theme/plugin for your particular port, rather than forking the entire 
