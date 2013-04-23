@@ -74,7 +74,13 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 * **iTerm2**
 * **OS X Terminal.app**
 * **Putty** courtesy [Brant Bobby](http://www.control-v.net)
-    and on [GitHub](https://github.com/brantb)
+  and on [GitHub](https://github.com/brantb)
+* **sakura** has support for a solarized palette in its
+  [latest development code](https://launchpad.net/sakura).
+  Builds for Ubuntu series precise and quantal are available in
+  [Chris Weyl's](http://whitepointstarllc.com)
+  [PPA](https://launchpad.net/~rsrchboy/+archive/ppa).
+
 
 ### Other Applications
 
