@@ -67,7 +67,7 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 
 *   **Xcode** work in progress ports are available for [Xcode 3] and [Xcode 4] 
     and will be pulled into the main Solarized project soon.
-*   **Atom** This theme is installed by default with Atom and can be activated 
+*   **Atom**. This theme is installed by default with Atom and can be activated 
     by going to the Themes section in the Settings view (cmd-,) and selecting it 
     from the Syntax Themes dropdown menu. 
     
