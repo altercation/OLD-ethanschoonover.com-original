@@ -67,7 +67,10 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 
 *   **Xcode** work in progress ports are available for [Xcode 3] and [Xcode 4] 
     and will be pulled into the main Solarized project soon.
-
+*   **Atom** This theme is installed by default with Atom and can be activated 
+    by going to the Themes section in the Settings view (cmd-,) and selecting it 
+    from the Syntax Themes dropdown menu. 
+    
 ### Terminal Emulators
 
 * **Xresources** / Xdefaults
@@ -135,6 +138,7 @@ and git repositories:
 
     * [Xcode 3 work in progress][Xcode 3]
     * [Xcode 4 work in progress][Xcode 4]
+    * [Atom Repository]
 
 Note that through the magic of [git-subtree](https://github.com/apenwarr/git-subtree)
 these repositories are all kept in sync, so you can pull any of them and get the most up-to-date version.
@@ -341,6 +345,11 @@ These screen shots show Vim running with my own [Pandoc Kit Syntax](http://ethan
 [![tex dark](https://github.com/altercation/solarized/raw/master/img/screen-tex-dark-th.png)](https://github.com/altercation/solarized/raw/master/img/screen-tex-dark.png)
 [![tex light](https://github.com/altercation/solarized/raw/master/img/screen-tex-light-th.png)](https://github.com/altercation/solarized/raw/master/img/screen-tex-light.png)
 
+### Atom
+
+[![atom dark](https://cloud.githubusercontent.com/assets/378023/12602908/9c252b08-c4f0-11e5-8833-6aad91b8fa34.png)](https://cloud.githubusercontent.com/assets/378023/12602908/9c252b08-c4f0-11e5-8833-6aad91b8fa34.png)
+[![atom light](https://cloud.githubusercontent.com/assets/378023/12602186/87edab3e-c4ea-11e5-8f4a-4b7defda283b.png)](https://cloud.githubusercontent.com/assets/378023/12602186/87edab3e-c4ea-11e5-8f4a-4b7defda283b.png)
+
 The Values
 ----------
 
@@ -406,6 +415,7 @@ background.
 [Visual Studio Repository]: https://github.com/leddt/visualstudio-colors-solarized
 [Xcode 3]: https://github.com/shayne/solarized/tree/master/apple-xcode3-solarized
 [Xcode 4]: https://github.com/brianmichel/solarized/tree/master/apple-xcode4-solarized
+[Atom Repository]: https://github.com/atom/solarized-light-syntax
 [me]: http://ethanschoonover.com/colophon
 [changelog]: http://ethanschoonover.com/solarized/CHANGELOG
 [Vim README]: http://ethanschoonover.com/solarized/vim-colors-solarized
