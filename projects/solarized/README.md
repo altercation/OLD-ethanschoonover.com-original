@@ -72,6 +72,7 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 
 * **Xresources** / Xdefaults
 * **iTerm2**
+* **[Termius](https://termius.com)**
 * **OS X Terminal.app**
 * **Putty** courtesy [Brant Bobby](http://www.control-v.net)
     and on [GitHub](https://github.com/brantb)
