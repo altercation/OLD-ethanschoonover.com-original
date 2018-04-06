@@ -74,7 +74,8 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 * **iTerm2**
 * **OS X Terminal.app**
 * **Putty** courtesy [Brant Bobby](http://www.control-v.net)
-    and on [GitHub](https://github.com/brantb)
+    and on [GitHub](https://github.com/brantb)
+* **Termux** Linux terminal emulator on android [source](https://github.com/termux/termux-styling)
 
 ### Other Applications
 
