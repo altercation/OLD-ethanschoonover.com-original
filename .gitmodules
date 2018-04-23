@@ -1,0 +1,3 @@
+[submodule "projects/solarized/firefox-solarized-theme/zen-fox"]
+	path = projects/solarized/firefox-solarized-theme/zen-fox
+	url = https://github.com/mr-islam/zen-fox

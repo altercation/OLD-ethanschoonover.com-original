@@ -1,0 +1,32 @@
+{
+  "description": "Theme Firefox to suit you, day or night. Solarized.",
+  "homepage_url": "https://addons.mozilla.org/en-US/firefox/addon/zen-fox/",
+  "manifest_version": 2,
+  "name": "Zen Fox",
+  "permissions": [
+    "storage",
+    "theme",
+    "alarms"
+  ],
+  "background": {
+    "scripts": ["theme.js"]
+  },
+  "icons": {
+    "48": "icons/48.png",
+    "96": "icons/96.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/48.png",
+      "96": "icons/96.png"
+    }},
+  "options_ui": {
+    "page": "settings/settings.html"
+  },
+  "version": "1.5.1",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "60.0"
+    }
+  }
+}
