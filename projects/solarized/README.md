@@ -80,6 +80,8 @@ Currently available in formats for (cf [screenshots](#screenshots) below):
 
 *   **Mutt** e-mail client also by [me] (*just* the Mutt colorscheme is
     [available here][Mutt Repository])
+    
+*   **Firefox** browser dynamic theme by [Naved Islam](https://github.com/mr-islam) ([@mrislam_](http://twitter.com/@mrislam_)), in the main repo and in a [standalone repository](https://github.com/mr-islam/zen-fox)
 
 ### Palettes
 
